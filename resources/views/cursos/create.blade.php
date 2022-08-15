@@ -9,20 +9,41 @@
         <label >
             Nombre:
             <br>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{old('name')}}">
         </label>
+
+        @error('name')
+            <br>
+            <small style="color:red">*{{$message}}</small>
+            <br>
+        @enderror
+
         <br>
         <label >
             Descripcion:
             <br>
-            <textarea name="description" rows="5"></textarea>
+            <textarea name="description" rows="5">{{old('description')}}</textarea>
         </label>
+        
+        @error('description')
+            <br>
+            <small style="color:red">*{{$message}}</small>
+            <br>
+        @enderror
+
         <br>
         <label >
             Categoria:
             <br>
-            <input type="text" name="categoria">
+            <input type="text" name="categoria" value="{{old('categoria')}}">
         </label>
+        
+        @error('categoria')
+            <br>
+            <small style="color:red">*{{$message}}</small>
+            <br>
+        @enderror
+
         <br>
         <input type="submit" value="Enviar formulario">
     </form>
