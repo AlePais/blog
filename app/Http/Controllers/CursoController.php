@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Curso;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCurso;
+use Doctrine\DBAL\Schema\Index;
 
 class CursoController extends Controller
 {
@@ -71,5 +72,11 @@ class CursoController extends Controller
         return redirect()->route("cursos.show", $curso);
     }
 
+    public function destroy(Curso $curso){
+        
+        $curso->delete();
+        
+        return redirect()->route('cursos.index');
+    }
 
 }
