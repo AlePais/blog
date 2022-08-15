@@ -4,4 +4,26 @@
 
 @section('content')
     <h1>En esta pagina podras crear un curso</h1>
+    <form action="{{route('cursos.store')}}" method="post">
+        @csrf
+        <label >
+            Nombre:
+            <br>
+            <input type="text" name="name">
+        </label>
+        <br>
+        <label >
+            Descripcion:
+            <br>
+            <textarea name="description" rows="5"></textarea>
+        </label>
+        <br>
+        <label >
+            Categoria:
+            <br>
+            <input type="text" name="categoria">
+        </label>
+        <br>
+        <input type="submit" value="Enviar formulario">
+    </form>
 @endsection
